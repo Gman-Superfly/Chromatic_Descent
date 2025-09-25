@@ -76,6 +76,9 @@ def train_one(
     best_acc = 0.0
     best_ckpt = run_dir / "model.pt"
 
+    # Cycle through probe batches across steps to avoid overfitting a fixed small subset
+    probe_iter = iter(probe_loader)
+
     for epoch in range(1, epochs + 1):
         model.train()
         pbar = tqdm(train_loader, desc=f"Seed {seed} Epoch {epoch}/{epochs}")
@@ -90,7 +93,11 @@ def train_one(
                 # compute current probe logits on a small batch to estimate divergence
                 model.eval()
                 with torch.no_grad():
-                    probe_images, _ = next(iter(probe_loader))
+                    try:
+                        probe_images, _ = next(probe_iter)
+                    except StopIteration:
+                        probe_iter = iter(probe_loader)
+                        probe_images, _ = next(probe_iter)
                     probe_images = probe_images.to(dev)
                     current_probe_logits = model(probe_images)
                 model.train()
@@ -165,8 +172,11 @@ def train_many(
 ) -> List[Dict]:
     anchors: List[torch.Tensor] = []
     infos: List[RunInfo] = []
-    for i in range(seeds):
-        seed = 13 + i
+    # Randomize training order to reduce sequential anchor bias (deterministic shuffle)
+    seed_values = [13 + i for i in range(seeds)]
+    rng = np.random.default_rng(0)
+    rng.shuffle(seed_values)
+    for seed in seed_values:
         info = train_one(
             seed=seed,
             dataset=dataset,
