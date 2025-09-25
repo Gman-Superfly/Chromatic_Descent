@@ -1,0 +1,111 @@
+{
+  "runs": [
+    {
+      "seed": 13,
+      "run_dir": "runs\\SEED_0013",
+      "ckpt_path": "runs\\SEED_0013\\model.pt",
+      "probe_logits_path": "artifacts\\probes\\probe_logits_seed13.pt",
+      "val_acc": 0.4326171875
+    },
+    {
+      "seed": 14,
+      "run_dir": "runs\\SEED_0014",
+      "ckpt_path": "runs\\SEED_0014\\model.pt",
+      "probe_logits_path": "artifacts\\probes\\probe_logits_seed14.pt",
+      "val_acc": 0.44189453125
+    },
+    {
+      "seed": 15,
+      "run_dir": "runs\\SEED_0015",
+      "ckpt_path": "runs\\SEED_0015\\model.pt",
+      "probe_logits_path": "artifacts\\probes\\probe_logits_seed15.pt",
+      "val_acc": 0.41259765625
+    },
+    {
+      "seed": 16,
+      "run_dir": "runs\\SEED_0016",
+      "ckpt_path": "runs\\SEED_0016\\model.pt",
+      "probe_logits_path": "artifacts\\probes\\probe_logits_seed16.pt",
+      "val_acc": 0.4375
+    },
+    {
+      "seed": 17,
+      "run_dir": "runs\\SEED_0017",
+      "ckpt_path": "runs\\SEED_0017\\model.pt",
+      "probe_logits_path": "artifacts\\probes\\probe_logits_seed17.pt",
+      "val_acc": 0.43115234375
+    },
+    {
+      "seed": 18,
+      "run_dir": "runs\\SEED_0018",
+      "ckpt_path": "runs\\SEED_0018\\model.pt",
+      "probe_logits_path": "artifacts\\probes\\probe_logits_seed18.pt",
+      "val_acc": 0.44970703125
+    },
+    {
+      "seed": 19,
+      "run_dir": "runs\\SEED_0019",
+      "ckpt_path": "runs\\SEED_0019\\model.pt",
+      "probe_logits_path": "artifacts\\probes\\probe_logits_seed19.pt",
+      "val_acc": 0.4375
+    },
+    {
+      "seed": 20,
+      "run_dir": "runs\\SEED_0020",
+      "ckpt_path": "runs\\SEED_0020\\model.pt",
+      "probe_logits_path": "artifacts\\probes\\probe_logits_seed20.pt",
+      "val_acc": 0.42333984375
+    },
+    {
+      "seed": 21,
+      "run_dir": "runs\\SEED_0021",
+      "ckpt_path": "runs\\SEED_0021\\model.pt",
+      "probe_logits_path": "artifacts\\probes\\probe_logits_seed21.pt",
+      "val_acc": 0.46044921875
+    },
+    {
+      "seed": 22,
+      "run_dir": "runs\\SEED_0022",
+      "ckpt_path": "runs\\SEED_0022\\model.pt",
+      "probe_logits_path": "artifacts\\probes\\probe_logits_seed22.pt",
+      "val_acc": 0.42919921875
+    },
+    {
+      "seed": 23,
+      "run_dir": "runs\\SEED_0023",
+      "ckpt_path": "runs\\SEED_0023\\model.pt",
+      "probe_logits_path": "artifacts\\probes\\probe_logits_seed23.pt",
+      "val_acc": 0.45068359375
+    },
+    {
+      "seed": 24,
+      "run_dir": "runs\\SEED_0024",
+      "ckpt_path": "runs\\SEED_0024\\model.pt",
+      "probe_logits_path": "artifacts\\probes\\probe_logits_seed24.pt",
+      "val_acc": 0.43798828125
+    }
+  ],
+  "embeddings": {
+    "distance_matrix": "artifacts\\embeddings\\distance_matrix.npy",
+    "embedding": "artifacts\\embeddings\\embedding_tsne.npy",
+    "plot": "artifacts\\embeddings\\embedding_tsne.png"
+  },
+  "ensemble": {
+    "individual": {
+      "13": 0.4254,
+      "14": 0.4417,
+      "15": 0.4251,
+      "16": 0.4251,
+      "17": 0.4195,
+      "18": 0.4422,
+      "19": 0.4383,
+      "20": 0.4168,
+      "21": 0.4455,
+      "22": 0.4273,
+      "23": 0.4537,
+      "24": 0.4402
+    },
+    "ensemble_all": 0.4537,
+    "report": "artifacts\\reports\\ensemble.txt"
+  }
+}

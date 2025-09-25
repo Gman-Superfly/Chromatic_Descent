@@ -1,0 +1,11 @@
+torch
+torchvision
+numpy>=1.26
+scikit-learn>=1.4
+matplotlib>=3.8
+seaborn>=0.13
+tqdm>=4.66
+einops>=0.7
+tabulate>=0.9
+typing_extensions>=4.11
+
